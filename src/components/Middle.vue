@@ -20,12 +20,6 @@
 
     export default {
         name: "Middle",
-        props: ['users', 'posts'],
-        data: function () {
-            return {
-                page: "Index"
-            }
-        },
         components: {
             EditPost,
             Index,
@@ -33,11 +27,17 @@
             Register,
             AddPost,
             Sidebar
-        }, beforeCreate() {
-            this.$root.$on("onChangePage", (page) => {
-                this.page = page;
-            });
-        }
+        },
+        props: ['users', 'posts'],
+        data: function () {
+                    return {
+                        page: "Index"
+                    }
+                }, beforeCreate() {
+                    this.$root.$on("onChangePage", (page) => {
+                        this.page = page;
+                    });
+                }
     }
 </script>
 

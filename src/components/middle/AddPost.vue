@@ -21,14 +21,14 @@
 
 <script>
     export default {
-        data: function () {
-            return {
-                title: "",
-                text: "",
-                error: ""
-            }
-        },
         name: "AddPost",
+        data: function () {
+                    return {
+                        title: "",
+                        text: "",
+                        error: ""
+                    }
+                },
         beforeMount() {
             this.title = this.text = this.error = "";
             this.$root.$on("onAddPostValidationError", error => this.error = error);

@@ -15,8 +15,8 @@
 
 <script>
     export default {
-        props: ['users', 'post'],
-        name: "SidebarPost"
+        name: "SidebarPost",
+        props: ['users', 'post']
     }
 </script>
 

@@ -33,14 +33,14 @@
 
 <script>
     export default {
-        data: function() {
-            return {
-                login: "",
-                password: "",
-                error: ""
-            }
-        },
         name: "Enter",
+        data: function() {
+                    return {
+                        login: "",
+                        password: "",
+                        error: ""
+                    }
+                },
         beforeCreate() {
             this.$root.$on("onEnterValidationError", (error) => {
                 this.error = error;

@@ -21,14 +21,14 @@
 
 <script>
     export default {
-        data: function () {
-            return {
-                id: "",
-                text: "",
-                error: ""
-            }
-        },
         name: "EditPost",
+        data: function () {
+                    return {
+                        id: "",
+                        text: "",
+                        error: ""
+                    }
+                },
         beforeMount() {
             this.id = this.text = this.error = "";
             this.$root.$on("onEditPostValidationError", error => this.error = error);

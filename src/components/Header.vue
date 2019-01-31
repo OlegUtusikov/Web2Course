@@ -30,8 +30,8 @@
 
 <script>
     export default {
-        props: ['userId', 'users'],
         name: "Header",
+        props: ['userId', 'users'],
         beforeCreate() {
             this.$root.$on("onEnterSuccess", () => {
                 this.changePage('Index');
