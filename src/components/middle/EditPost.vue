@@ -4,17 +4,22 @@
             <label for="id">
                 ID:
             </label>
-            <input id="id" class="id" v-model="id"/>
+            <input id="id"
+                   class="id"
+                   v-model="id"/>
         </div>
         <div>
             <label for="text">
                 Text:
             </label>
-            <textarea id="text" rows="20" v-model="text"></textarea>
+            <textarea id="text"
+                      rows="20"
+                      v-model="text"></textarea>
         </div>
         <div class="error">{{error}}</div>
         <div>
-            <input type="submit" value="Edit"/>
+            <input type="submit"
+                   value="Edit"/>
         </div>
     </form>
 </template>
@@ -23,12 +28,12 @@
     export default {
         name: "EditPost",
         data: function () {
-                    return {
-                        id: "",
-                        text: "",
-                        error: ""
-                    }
-                },
+            return {
+                id: "",
+                text: "",
+                error: ""
+            }
+        },
         beforeMount() {
             this.id = this.text = this.error = "";
             this.$root.$on("onEditPostValidationError", error => this.error = error);
@@ -45,14 +50,17 @@
         display: block;
         margin-top: 1rem;
     }
+
     .id, textarea {
         width: 60%;
         box-sizing: border-box;
     }
+
     input[type='submit'] {
         margin-top: 1rem;
         width: 6rem;
     }
+
     .error {
         color: var(--error-color);
     }

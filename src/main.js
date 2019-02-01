@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
+import data from './data';
 
 Vue.config.productionTip = false;
 
-import data from './data';
-
 new Vue({
-    data: function() {
+    data: function () {
         return data;
     },
     render: h => h(App)

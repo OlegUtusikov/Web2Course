@@ -1,6 +1,7 @@
 <template>
     <div class="middle">
-        <Sidebar :users="users" :posts="posts"></Sidebar>
+        <Sidebar :users="users"
+                 :posts="posts"></Sidebar>
         <main>
             <Index v-if="page === 'Index'"/>
             <Enter v-if="page === 'Enter'"/>
@@ -30,14 +31,14 @@
         },
         props: ['users', 'posts'],
         data: function () {
-                    return {
-                        page: "Index"
-                    }
-                }, beforeCreate() {
-                    this.$root.$on("onChangePage", (page) => {
-                        this.page = page;
-                    });
-                }
+            return {
+                page: "Index"
+            }
+        }, beforeCreate() {
+            this.$root.$on("onChangePage", (page) => {
+                this.page = page;
+            });
+        }
     }
 </script>
 

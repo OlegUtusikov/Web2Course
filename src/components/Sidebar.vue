@@ -1,6 +1,8 @@
 <template>
     <aside>
-        <SidebarPost v-for="post in viewPosts" :post="post" :users="users" />
+        <SidebarPost v-for="post in viewPosts"
+                     :post="post"
+                     :users="users"/>
     </aside>
 </template>
 
@@ -12,12 +14,12 @@
         components: {
             SidebarPost
         },
-        props : ['users', 'posts'],
+        props: ['users', 'posts'],
         computed: {
-                    viewPosts: function () {
-                        return Object.values(this.posts).sort((a, b) => b.id - a.id).slice(0, 6);
-                    }
-                }
+            viewPosts: function () {
+                return Object.values(this.posts).sort((a, b) => b.id - a.id).slice(0, 6);
+            }
+        }
     }
 
 </script>

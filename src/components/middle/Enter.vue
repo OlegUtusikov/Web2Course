@@ -8,7 +8,9 @@
                         <label for="login">Login</label>
                     </div>
                     <div class="value">
-                        <input id="login" name="login" v-model="login"/>
+                        <input id="login"
+                               name="login"
+                               v-model="login"/>
                     </div>
                 </div>
 
@@ -17,14 +19,17 @@
                         <label for="password">Password</label>
                     </div>
                     <div class="value">
-                        <input id="password" type="password" name="password"/>
+                        <input id="password"
+                               type="password"
+                               name="password"/>
                     </div>
                 </div>
 
                 <div class="error">{{error}}</div>
 
                 <div class="button-field">
-                    <input type="submit" value="Enter">
+                    <input type="submit"
+                           value="Enter">
                 </div>
             </form>
         </div>
@@ -34,13 +39,13 @@
 <script>
     export default {
         name: "Enter",
-        data: function() {
-                    return {
-                        login: "",
-                        password: "",
-                        error: ""
-                    }
-                },
+        data: function () {
+            return {
+                login: "",
+                password: "",
+                error: ""
+            }
+        },
         beforeCreate() {
             this.$root.$on("onEnterValidationError", (error) => {
                 this.error = error;
