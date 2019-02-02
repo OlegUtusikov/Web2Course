@@ -4,17 +4,17 @@
             <label for="title">
                 Title:
             </label>
-            <input id="title"
+            <input v-model="title"
                    class="title"
-                   v-model="title"/>
+                   id="title"/>
         </div>
         <div>
             <label for="text">
                 Text:
             </label>
-            <textarea id="text"
-                      rows="20"
-                      v-model="text"></textarea>
+            <textarea v-model="text"
+                      id="text"
+                      rows="20"></textarea>
         </div>
         <div class="error">{{error}}</div>
         <div>
@@ -26,23 +26,23 @@
 
 <script>
     export default {
-        name: "AddPost",
-        data: function () {
+        name: 'AddPost',
+        data: function() {
             return {
-                title: "",
-                text: "",
-                error: ""
-            }
+                title: '',
+                text: '',
+                error: ''
+            };
         },
         beforeMount() {
-            this.title = this.text = this.error = "";
-            this.$root.$on("onAddPostValidationError", error => this.error = error);
+            this.title = this.text = this.error = '';
+            this.$root.$on('onAddPostValidationError', error => this.error = error);
         }, methods: {
-            onAdd: function () {
-                this.$root.$emit("onAddPost", this.title, this.text);
+            onAdd: function() {
+                this.$root.$emit('onAddPost', this.title, this.text);
             }
         }
-    }
+    };
 </script>
 
 <style scoped>

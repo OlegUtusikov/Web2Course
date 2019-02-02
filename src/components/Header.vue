@@ -23,7 +23,7 @@
                 <a href="#page=Enter"
                    @click="changePage('Enter')">Enter</a>
                 |
-                <a href="#page=Enter"
+                <a href="#page=Register"
                    @click="changePage('Register')">Register</a>
             </template>
         </div>
@@ -31,6 +31,8 @@
             <ul>
                 <li><a href="#page=Index"
                        @click="changePage('Index')">Home</a></li>
+                <li><a href="#page=UsersPage"
+                       @click="changePage('UsersPage')">Users</a></li>
                 <li v-if="userId"><a href="#page=AddPost"
                                      @click="changePage('AddPost')">Add Post</a></li>
                 <li v-if="userId"><a href="#page=EditPost"

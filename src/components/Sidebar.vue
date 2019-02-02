@@ -17,7 +17,7 @@
         props: ['users', 'posts'],
         computed: {
             viewPosts: function () {
-                return Object.values(this.posts).sort((a, b) => b.id - a.id).slice(0, 6);
+                return Object.values(this.posts).sort((a, b) => b.id - a.id).slice(0, 4);
             }
         }
     }

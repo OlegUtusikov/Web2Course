@@ -1,13 +1,15 @@
 <template>
     <div class="middle">
-        <Sidebar :users="users"
-                 :posts="posts"></Sidebar>
+        <Sidebar :posts="posts"
+                 :users="users"></Sidebar>
         <main>
             <Index v-if="page === 'Index'"/>
             <Enter v-if="page === 'Enter'"/>
             <Register v-if="page === 'Register'"/>
             <AddPost v-if="page === 'AddPost'"/>
             <EditPost v-if="page === 'EditPost'"/>
+            <UsersPage v-if="page === 'UsersPage'"
+                       :users="users"/>
         </main>
     </div>
 </template>
@@ -16,30 +18,32 @@
     import Enter from './middle/Enter';
     import Register from './middle/Register';
     import AddPost from './middle/AddPost';
-    import EditPost from "./middle/EditPost";
-    import Sidebar from "./Sidebar"
+    import EditPost from './middle/EditPost';
+    import UsersPage from './middle/UsersPage';
+    import Sidebar from './Sidebar';
 
     export default {
-        name: "Middle",
+        name: 'Middle',
         components: {
             EditPost,
             Index,
             Enter,
             Register,
             AddPost,
-            Sidebar
+            Sidebar,
+            UsersPage
         },
         props: ['users', 'posts'],
-        data: function () {
+        data: function() {
             return {
-                page: "Index"
-            }
+                page: 'Index'
+            };
         }, beforeCreate() {
-            this.$root.$on("onChangePage", (page) => {
+            this.$root.$on('onChangePage', (page) => {
                 this.page = page;
             });
         }
-    }
+    };
 </script>
 
 <style scoped>
