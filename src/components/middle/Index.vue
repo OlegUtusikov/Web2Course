@@ -1,10 +1,17 @@
 <template>
-    <div>I'm index</div>
+    <div class="main">
+        <IndexPost v-for="post in posts" :users="users" :post="post"/>
+    </div>
 </template>
 
 <script>
+    import IndexPost from "./IndexPost";
     export default {
-        name: "Index"
+        name: "Index",
+        components : {
+          IndexPost
+        },
+      props: ["users", "posts"]
     }
 </script>
 

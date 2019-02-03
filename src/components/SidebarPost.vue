@@ -7,7 +7,8 @@
             {{post.text}}
         </div>
         <div class="footer">
-            <a href="#">View all</a>
+            <a href="#"
+               @click="changePage('Post')">View all</a>
         </div>
     </section>
 
@@ -15,9 +16,15 @@
 
 <script>
     export default {
-        name: "SidebarPost",
-        props: ['users', 'post']
-    }
+        name: 'SidebarPost',
+        props: ['users', 'post'],
+        methods: {
+            changePage: function(page) {
+                this.$root.$emit('onChangePage', page);
+                this.$root.$emit('onChangePost', this.post);
+            }
+        }
+    };
 </script>
 
 <style scoped>

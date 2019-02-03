@@ -3,7 +3,8 @@
     <body id="app">
     <Header :userId="userId"
             :users="users"/>
-    <Middle :posts="posts"
+    <Middle :comments="comments"
+            :posts="posts"
             :users="users"/>
     <Footer/>
     </body>
@@ -21,7 +22,7 @@
             Middle,
             Footer
         },
-        data: function () {
+        data: function() {
             return this.$root.$data;
         }, beforeCreate() {
             this.$root.$on('onLogout', () => {
